@@ -41,12 +41,11 @@ for N = N_values
     % Отрисовка
     plot(t_plot, f_orig, '--', 'LineWidth', 1.5, 'Color', [0.6 0.6 0.6]); hold on;
     plot(t_plot, FN, 'LineWidth', 2, 'Color', [0 0.4470 0.7410]); 
-    plot(t_plot, GN, ':', 'LineWidth', 2, 'Color', [0.8500 0.3250 0.0980]); 
+    plot(t_plot, GN, ':', 'LineWidth', 3, 'Color', [0.8500 0.3250 0.0980]); 
     
     grid on;
     xlabel('t', 'FontSize', 14);
     ylabel('f(t)', 'FontSize', 14);
-    % title НЕ ИСПОЛЬЗУЕТСЯ по просьбе
     
     % Настройка легенды (внизу слева извне)
     % Сдвигаем оси чуть выше, чтобы освободить место снизу
