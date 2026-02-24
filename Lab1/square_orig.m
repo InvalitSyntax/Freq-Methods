@@ -9,4 +9,4 @@ f_logic = @(x) a .* (mod(x-t0, T) < (t1-t0)) + b .* (mod(x-t0, T) >= (t1-t0));
 f_values = f_logic(t);
 
 %% Вызов функции отрисовки
-plot_periodic_signal(t, f_values, 'f(t) - Квадратная волна', 'square_wave.pdf', [b-1, a+1]);
+plot_periodic_signal(t, f_values, 'f(t) - Квадратная волна', 'img/square_wave.pdf', [b-1, a+1]);
