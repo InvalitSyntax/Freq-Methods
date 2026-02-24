@@ -1,4 +1,4 @@
-function plot_fourier_approx(t, f_orig, FN, GN, N, filename)
+function plot_fourier_approx(t, f_orig, FN, GN, N, filename, y_limits)
     % plot_fourier_approx - Отрисовка сравнения оригинала и аппроксимаций
     
     set(0, 'DefaultAxesFontName', 'Times New Roman');
@@ -15,6 +15,12 @@ function plot_fourier_approx(t, f_orig, FN, GN, N, filename)
     grid on;
     xlabel('t', 'FontSize', 14);
     ylabel('f(t)', 'FontSize', 14);
+
+    % --- УСТАНОВКА ЛИМИТОВ (если переданы) ---
+    if nargin > 6 && ~isempty(y_limits)
+        ylim(y_limits);
+    end
+    xlim([min(t), max(t)]);
     
     % Настройка легенды под графиком слева
     set(ax, 'Position', [0.12, 0.25, 0.83, 0.70]); 
