@@ -17,7 +17,7 @@ plot_periodic_signal(t_plot, f_orig, 'f(t) = t^2 (Чётная)', 'img/even_orig
 print_fourier_results(an, bn, cn, nn, 2);
 
 %% 4. Построение аппроксимаций (цикл по N)
-y_lims = [-0.2, 1.2]; 
+y_lims = [-0.2, 1.2];
 
 for N = N_values
     [an, bn, cn, nn] = calc_fourier(f_handle, t0, T, N);
