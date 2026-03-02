@@ -1,5 +1,4 @@
 function plot_fourier_approx(t, f_orig, FN, GN, N, filename, y_limits)
-    % plot_fourier_approx - Отрисовка сравнения оригинала и аппроксимаций
     
     set(0, 'DefaultAxesFontName', 'Times New Roman');
     set(0, 'DefaultTextFontName', 'Times New Roman');
@@ -9,7 +8,7 @@ function plot_fourier_approx(t, f_orig, FN, GN, N, filename, y_limits)
     
     plot(t, f_orig, '--', 'LineWidth', 1.5, 'Color', [0.6 0.6 0.6]); hold on;
     plot(t, FN, 'LineWidth', 2, 'Color', [0 0.4470 0.7410]); 
-    plot(t, GN, ':', 'LineWidth', 3, 'Color', [0.8500 0.3250 0.0980]); 
+    plot(t, GN, '-.', 'LineWidth', 2, 'Color', '#F07427'); 
     
     grid on;
     xlabel('t', 'FontSize', 14);

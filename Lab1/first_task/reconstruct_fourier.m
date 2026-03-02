@@ -1,5 +1,4 @@
 function [FN, GN] = reconstruct_fourier(an, bn, cn, nn, T, t)
-    % reconstruct_fourier - Восстановление сигнала из коэффициентов
     w0 = 2 * pi / T;
     
     % 1. Тригонометрическая форма FN
@@ -13,5 +12,5 @@ function [FN, GN] = reconstruct_fourier(an, bn, cn, nn, T, t)
     for i = 1:length(nn)
         GN = GN + cn(i)*exp(1i*nn(i)*w0*t);
     end
-    GN = real(GN); % Убираем мнимый "шум"
+    GN = real(GN);
 end

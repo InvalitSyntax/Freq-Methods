@@ -1,25 +1,25 @@
-%% Параметры функции
+%% 1. Параметры
 T = 2;
-t0 = -1;
-N_values = [1, 3, 10, 50]; 
+t0 = 0;
+N_values = [1, 15, 50, 100]; 
 
-f_handle = @(t) mod(t + 1, 2) - 1;
+f_handle = @(t) 2*mod(t, 2) + sin(10*mod(t, 2));
 
-%% Отрисовка оригинала
-t_plot = linspace(-3, 3, 3000); 
+%% 2. Отрисовка оригинала
+t_plot = linspace(0, 6, 3000); % 3 периода
 f_orig = f_handle(t_plot);
-plot_periodic_signal(t_plot, f_orig, 'f(t) = t (Нечётная)', 'img/odd_orig.pdf', [-1.5, 1.5]);
+plot_periodic_signal(t_plot, f_orig, 'f(t) = 2t + sin(10t)', 'img/fun_orig.pdf', [-1, 6]);
 
-%% Расчет коэффициентов (для N=2)
+%% 3. Расчет коэффициентов (для N=2)
 [an, bn, cn, nn] = calc_fourier(f_handle, t0, T, 2);
 print_fourier_results(an, bn, cn, nn, 2);
 
-%% Аппроксимация
+%% 4. Аппроксимация
 for N = N_values
     [an, bn, cn, nn] = calc_fourier(f_handle, t0, T, N);
     [FN, GN] = reconstruct_fourier(an, bn, cn, nn, T, t_plot);
-    fname = sprintf('img/odd_plot_N%d.pdf', N);
-    plot_fourier_approx(t_plot, f_orig, FN, GN, N, fname, [-1.5, 1.5]);
+    fname = sprintf('img/fun_plot_N%d.pdf', N);
+    plot_fourier_approx(t_plot, f_orig, FN, GN, N, fname, [-1, 6]);
 end
 
 %% Проверка равенства Парсеваля (для максимального N)

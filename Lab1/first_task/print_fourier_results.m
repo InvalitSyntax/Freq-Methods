@@ -1,5 +1,4 @@
 function print_fourier_results(an, bn, cn, nn, N)
-    % print_fourier_results - Красивый вывод коэффициентов в консоль
     
     divider = repmat('=', 1, 40);
     fprintf('\n%s\n', divider);
@@ -25,7 +24,6 @@ function print_fourier_results(an, bn, cn, nn, N)
     fprintf('  n  |         c_n (Re + Im)         \n');
     fprintf('----------------------------------------\n');
     for i = 1:length(nn)
-        % Определяем знак мнимой части для красоты
         if imag(cn(i)) >= 0
             sgn = '+';
         else
